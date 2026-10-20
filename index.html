@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mujeres hiladoras de sueños · Plataforma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F4FB;--surface:#fff;--ink:#1A1B45;--muted:#55577F;--line:#D9D6EA;--btn-bg:#C42A66;--btn-fg:#fff;
+--t1:#E4417A;--t2:#F5B83D;--t3:#2CC4B0;--t4:#3E9B5C;--t5:#8B6CF0;--t6:#E8743B;
+--display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;--body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13153A;--surface:#1C1F55;--ink:#F3F0FF;--muted:#B4B6E0;--line:#34377F;--btn-bg:#FF6B9D;--btn-fg:#1A1B45}}
+:root[data-theme="dark"]{--bg:#13153A;--surface:#1C1F55;--ink:#F3F0FF;--muted:#B4B6E0;--line:#34377F;--btn-bg:#FF6B9D;--btn-fg:#1A1B45}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--t3);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.8rem}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:6}
+.brand{font:700 1.05rem var(--display);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.brand i{width:26px;height:26px;border-radius:50%;background:conic-gradient(var(--t1),var(--t2),var(--t3),var(--t4),var(--t5),var(--t1))}
+.bar nav{display:flex;gap:1.4rem;font-weight:500;font-size:.95rem}
+.bar nav a{text-decoration:none;color:var(--muted)}.bar nav a:hover{color:var(--ink)}
+@media (max-width:620px){.bar nav{gap:.9rem;font-size:.85rem}.brand span{display:none}}
+.hero{padding-block:clamp(2.5rem,7vw,5.5rem)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,5vw,4rem);align-items:center}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}}
+h1{font:800 clamp(2.5rem,6.4vw,4.7rem)/1.02 var(--display);letter-spacing:-.025em;margin:0 0 1.2rem;text-wrap:balance}
+.lead{font-size:1.2rem;color:var(--muted);max-width:34ch;margin:0 0 2rem}
+.btn{--lift:0px;display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;border-radius:999px;font:600 1rem var(--body);text-decoration:none;position:relative;overflow:hidden;isolation:isolate;transform:translateY(var(--lift));transition:transform .25s,box-shadow .25s,color .25s;background:var(--btn-bg);color:var(--btn-fg);border:0;cursor:pointer}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--t1),var(--t2),var(--t3),var(--t4));transform:translateX(-101%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.btn:hover{--lift:-3px;box-shadow:0 10px 24px -10px rgba(20,20,70,.55);color:#1A1B45}.btn:hover::before{transform:none}.btn:active{--lift:0px;transform:scale(.97)}
+.btn.alt{background:none;border:2px solid var(--ink);color:var(--ink)}.btn.alt:hover{color:#1A1B45}
+.loom{width:100%;height:auto;display:block;border-radius:18px;background:var(--surface);border:1px solid var(--line);padding:14px}
+.loom .weft{transform-box:fill-box;transform-origin:left center;transform:scaleX(0);animation:weave .6s cubic-bezier(.3,.7,.2,1) forwards}
+.loom .over{opacity:0;animation:fade .3s forwards}
+@keyframes weave{to{transform:scaleX(1)}}@keyframes fade{to{opacity:1}}
+.section{padding-block:clamp(2.8rem,7vw,5rem)}
+.section.tint{background:var(--surface);border-block:1px solid var(--line)}
+h2{font:700 clamp(1.7rem,3.8vw,2.5rem)/1.1 var(--display);letter-spacing:-.015em;margin:0 0 .6rem}
+.sub{color:var(--muted);max-width:52ch;margin:0 0 2rem}
+/* hilos: un solo selector para todo el drive y los videos */
+.hilos{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:1.2rem}
+@media (max-width:820px){.hilos{grid-template-columns:1fr 1fr}}
+.hilo{position:relative;text-align:left;font:600 1rem/1.25 var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:1rem 1rem 1.3rem;cursor:pointer;transition:transform .25s,border-color .25s}
+.hilo::after{content:"";position:absolute;left:1rem;right:1rem;bottom:.7rem;height:5px;border-radius:5px;background:var(--c);transform:scaleX(.25);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.hilo:hover{transform:translateY(-3px)}.hilo[aria-selected=true]{border-color:var(--ink);background:var(--surface)}.hilo[aria-selected=true]::after,.hilo:hover::after{transform:none}
+.hilo small{display:block;font-weight:500;color:var(--muted);margin-top:.25rem;font-size:.85rem}
+.panel{background:var(--bg);border:1px solid var(--line);border-top:8px solid var(--c);border-radius:20px;padding:clamp(1.4rem,4vw,2.4rem);display:grid;gap:1rem;animation:swap .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes swap{from{opacity:0;transform:translateY(10px)}}
+.panel h3{font:700 clamp(1.4rem,3vw,1.9rem)/1.15 var(--display);margin:0}
+.panel p{margin:0;color:var(--muted);max-width:56ch}
+.acts{display:flex;flex-wrap:wrap;gap:.8rem}
+.todo{font-size:.92rem;color:var(--muted)}
+details{border-top:1px solid var(--line);padding:.7rem 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;gap:.8rem;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary b{font:800 1.1rem var(--display);color:var(--c);min-width:1.4rem}
+summary::after{content:"+";margin-left:auto;font-size:1.3rem;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:.5rem 0 0 2.2rem;font-size:.97rem}
+.pending{opacity:.55;pointer-events:none}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;counter-reset:s}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;position:relative;padding-top:4.4rem}
+.steps li::before{content:counter(s);position:absolute;top:0;left:0;width:3.2rem;height:3.2rem;border-radius:50%;display:grid;place-items:center;font:800 1.4rem var(--display);color:#1A1B45;background:var(--c)}
+.steps li::after{content:"";position:absolute;top:1.6rem;left:3.6rem;right:0;border-top:3px dotted var(--line)}
+.steps li:last-child::after{display:none}@media (max-width:820px){.steps li::after{display:none}}
+.steps h3{font:700 1.25rem var(--display);margin:0 0 .4rem}.steps p{margin:0;color:var(--muted)}
+dl{margin:0}.rule{display:grid;grid-template-columns:minmax(180px,.4fr) 1fr;gap:1rem 2rem;padding-block:1.2rem;border-top:1px solid var(--line)}
+.rule:last-child{border-bottom:1px solid var(--line)}@media (max-width:620px){.rule{grid-template-columns:1fr;gap:.3rem}}
+dt{font:700 1.15rem var(--display)}dd{margin:0;color:var(--muted)}
+footer{padding-block:2.5rem 3rem;text-align:center}footer p{margin:.5rem auto 0;color:var(--muted);font-size:.92rem;max-width:60ch}footer .btn{margin-top:1rem}
+.toast{position:fixed;left:50%;bottom:calc(1.4rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,160%);background:var(--ink);color:var(--bg);padding:.8rem 1.2rem;border-radius:12px;font-weight:500;font-size:.95rem;transition:transform .35s;z-index:9}
+.toast.on{transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.loom .weft{transform:none}.loom .over{opacity:1}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="#inicio"><i aria-hidden="true"></i><span>Hiladoras de sueños</span></a>
+  <nav><a href="#explorar">Explorar</a><a href="#participar">Aportar</a><a href="#reglas">Reglas</a></nav>
+</div></header>
+<main id="inicio">
+  <section class="hero"><div class="wrap">
+    <div>
+      <h1>Mujeres hiladoras de sueños</h1>
+      <p class="lead">Un espacio para compartir lo que tejemos: sube tus aportes, aprende con tutoriales y mira lo que otras han creado.</p>
+      <a class="btn" href="#explorar">Elegir por dónde empezar</a>
+    </div>
+    <svg id="loom" class="loom" viewBox="0 0 352 224" role="img" aria-label="Ilustración de un telar con hilos de colores que se tejen"></svg>
+  </div></section>
+
+  <section class="section tint" id="explorar"><div class="wrap">
+    <h2>¿Qué quieres hacer hoy?</h2>
+    <p class="sub">Elige un hilo y te llevamos directo a ese lugar.</p>
+    <div class="hilos" role="tablist" aria-label="Elige qué quieres hacer"></div>
+    <div class="panel" id="panel" role="tabpanel" tabindex="0"></div>
+  </div></section>
+
+  <section class="section" id="participar"><div class="wrap">
+    <h2>Así se suma un aporte</h2>
+    <p class="sub">No tienes que hacerlo sola: en los encuentros, los organizadores te ayudan a subir tus materiales.</p>
+    <ol class="steps">
+      <li style="--c:var(--t1)"><h3>Sube tu aporte</h3><p>Una foto de tu pieza, un video corto del paso a paso o un audio contando cómo lo haces.</p></li>
+      <li style="--c:var(--t2)"><h3>Lo revisamos contigo</h3><p>Los organizadores te preguntan lo que falta y acuerdan contigo quién puede verlo.</p></li>
+      <li style="--c:var(--t3)"><h3>Queda en la biblioteca</h3><p>Se publica con tu nombre, para que otras aprendan y tu trabajo se reconozca.</p></li>
+    </ol>
+  </div></section>
+
+  <section class="section tint" id="reglas"><div class="wrap">
+    <h2>Cuidamos lo que se comparte</h2>
+    <p class="sub">Lo que sabes y lo que haces es tuyo. Estas son las reglas del espacio.</p>
+    <dl>
+      <div class="rule"><dt>Tu nombre va en tu trabajo</dt><dd>Cada aporte se publica con el nombre de quien lo hizo, o del colectivo si así lo decide.</dd></div>
+      <div class="rule"><dt>Tú decides quién lo ve</dt><dd>Hay carpetas abiertas, carpetas solo para participantes y carpetas solo para la comunidad.</dd></div>
+      <div class="rule"><dt>Nada se publica sin permiso</dt><dd>Cada foto, video o relato se comparte únicamente con tu autorización.</dd></div>
+      <div class="rule"><dt>Los videos propios son privados</dt><dd>Los videos que grabemos juntas se suben como no listados, para que solo los vea quien tenga el enlace.</dd></div>
+    </dl>
+  </div></section>
+</main>
+<footer><div class="wrap">
+  <a class="btn alt" id="contacto" href="#">Escribir a los organizadores</a>
+  <p>Propuesta académica para el reto de Alianza Team.</p>
+  <p id="grupo"></p>
+</div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+// ---- enlaces ----
+const CONFIG = {
+  drive: "https://drive.google.com/drive/folders/1y0irubdE6HTLkeoqyXSwgqsPfUJOdp69?usp=sharing",
+  youtube: "https://docs.google.com/spreadsheets/d/1wVwkwi7aygAt_jh0NeXMWuimlmmLE0pgLeWshW9P8GI/edit?usp=sharing",
+  aportes: "https://drive.google.com/drive/folders/1LhWfgzo4MU6JHN1oKY7SFoXkvxlj10mE?usp=sharing",
+  biblioteca: "https://drive.google.com/drive/folders/1zcYrmqNxaus66ORh9DV7oAIIOJNmkrj4?usp=sharing",
+  historias: "https://drive.google.com/drive/folders/1dBjiqHRwl3Vig4-AxOLFnY5uteQhE5RS?usp=sharing",
+  vitrina: "https://drive.google.com/drive/folders/1rMdrhObdPsTQaByrOH5VY6nJ038PhH38?usp=sharing",
+  propuesta: "https://drive.google.com/file/d/1sn2IFu8rg8mIDRx82AtMs4W3jF7L9bzv/view?usp=sharing",
+  descarga: "https://drive.google.com/uc?export=download&id=1sn2IFu8rg8mIDRx82AtMs4W3jF7L9bzv",
+  documento: "https://drive.google.com/file/d/1adK5sdgBxbJwyTIPrZgqNws2RbS9-D3Q/view?usp=sharing",
+  documentoDescarga: "https://drive.google.com/uc?export=download&id=1adK5sdgBxbJwyTIPrZgqNws2RbS9-D3Q",
+  contacto: "mailto:mujerestejedoras8@gmail.com",
+  grupo: "Juan Felipe Ortiz Suarez - Universidad EAN"
+};
+// cada hilo = una acción de la persona (un solo botón por lugar)
+const HILOS = [
+  {k:"aportes", c:"--t1", t:"Compartir lo que sé", s:"Subir fotos, videos o audios", h:"Sube tu aporte", p:"Una foto de tu pieza, un video corto o un audio contándonos cómo lo haces. Cada aporte lleva tu nombre.", b:"Abrir la carpeta de aportes"},
+  {k:"youtube", c:"--t2", t:"Aprender", s:"8 módulos con videos", h:"Aprende en 8 módulos", p:"Cada módulo tiene sus videos. Abre el índice y busca el tema que necesitas.", b:"Ver los videos", mod:[
+    ["Fundamentos de diseño","Cómo pensar una pieza nueva y mejorar un producto."],
+    ["Nuestra historia y símbolos","Colores, símbolos y relatos para innovar desde la tradición."],
+    ["Calidad y acabados","Qué piden los compradores y cómo lograr buenos acabados."],
+    ["Costeo y precios justos","Cuánto cuesta una pieza y cuánto cobrar."],
+    ["Producción colectiva","Organizar pedidos y repartir el trabajo."],
+    ["Narrativa del producto","Fotos, historia de cada pieza y etiqueta."],
+    ["Comercialización","Vitrina, ferias, aliados y ventas por internet."],
+    ["Acuerdos justos","Contratos sencillos, protección del saber y reparto del valor."]]},
+  {k:"biblioteca", c:"--t3", t:"Consultar técnicas", s:"Una ficha por técnica", h:"Biblioteca de técnicas", p:"Fichas de cada técnica de tejido, revisadas con quienes las conocen.", b:"Abrir la biblioteca"},
+  {k:"historias", c:"--t4", t:"Leer las historias", s:"De dónde vienen los diseños", h:"Historias y memoria", p:"Los relatos detrás de cada diseño: quién lo teje, de dónde viene y qué significa.", b:"Abrir las historias"},
+  {k:"vitrina", c:"--t5", t:"Ver piezas listas", s:"Lo que ya se puede mostrar", h:"Vitrina de productos", p:"Las piezas terminadas, con su foto y su historia.", b:"Abrir la vitrina"},
+  {k:"propuesta", c:"--t6", t:"Conocer la propuesta", s:"Diapositivas y marco ético", h:"La propuesta completa", p:"Las diapositivas con la ruta paso a paso, el marco ético y cómo vamos a medir los avances, y el documento escrito de la propuesta.", b:"Ver las diapositivas"}
+];
+const $ = s => document.querySelector(s);
+const toastEl = $('#toast'); let tt;
+function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('on'),3200)}
+function link(el,url){
+  if(url){el.href=url;if(!url.startsWith('mailto:')){el.target='_blank';el.rel='noopener noreferrer'}}
+  else{el.href='#';el.addEventListener('click',e=>{e.preventDefault();toast('Este enlace aún no está listo.')})}
+}
+const tabs=$('.hilos'), panel=$('#panel');
+HILOS.forEach((h,i)=>{
+  const b=document.createElement('button');
+  b.className='hilo';b.role='tab';b.id='tab-'+h.k;b.style.setProperty('--c',`var(${h.c})`);
+  b.innerHTML=`${h.t}<small>${h.s}</small>`;
+  b.onclick=()=>show(i);
+  b.onkeydown=e=>{const d={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];if(d){e.preventDefault();const n=(i+d+HILOS.length)%HILOS.length;show(n);tabs.children[n].focus()}};
+  tabs.appendChild(b);
+});
+function show(i){
+  const h=HILOS[i];
+  [...tabs.children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});
+  panel.style.setProperty('--c',`var(${h.c})`);panel.setAttribute('aria-labelledby','tab-'+h.k);
+  const mods=h.mod?h.mod.map((m,n)=>`<details><summary><b>${n+1}</b>${m[0]}</summary><p>${m[1]}</p></details>`).join(''):'';
+  panel.innerHTML=`<h3>${h.h}</h3><p>${h.p}</p>${mods}<div class="acts"><a class="btn" id="go">${h.b}</a>${h.k==="propuesta"?'<a class="btn alt" id="doc">Leer el documento</a><a class="btn alt" id="dl">Descargar el PDF</a>':""}</div><span class="todo">¿Prefieres ver todo junto? <a id="all">Abrir el Drive completo</a></span>`;
+  link($('#go'),CONFIG[h.k]);if($('#dl'))link($('#dl'),CONFIG.descarga);if($('#doc'))link($('#doc'),CONFIG.documento);link($('#all'),CONFIG.drive);
+  panel.style.animation='none';panel.offsetHeight;panel.style.animation='';
+}
+show(0);
+link($('#contacto'),CONFIG.contacto);
+$('#grupo').textContent=CONFIG.grupo;
+
+// telar: hilos de urdimbre (vertical) y trama (horizontal) que se cruzan
+(function(){
+  const svg = document.getElementById('loom');
+  const cols = 44, rows = 28, cw = 8, rh = 8;
+  // franjas de color como en una mochila: grupos de 2-3 hilos
+  const colores = ['var(--t1)','var(--t1)','var(--t1)','var(--t2)','var(--t2)','var(--t3)','var(--t3)','var(--t3)','var(--t4)','var(--t4)'];
+  const ns = 'http://www.w3.org/2000/svg';
+  const add = (tag, attrs) => {
+    const n = document.createElementNS(ns, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    svg.appendChild(n); return n;
+  };
+  // urdimbre de fondo
+  for (let c = 0; c < cols; c++) {
+    add('rect', { x: c*cw + 1.5, y: 0, width: 5, height: rows*rh, fill: 'var(--hilo)', opacity: .35 });
+  }
+  for (let r = 0; r < rows; r++) {
+    const delay = (.2 + r*.05).toFixed(2);
+    const w = add('rect', { x: 0, y: r*rh + 1, width: cols*cw, height: rh - 2, rx: 1, fill: colores[r % colores.length], class: 'weft' });
+    w.style.animationDelay = delay + 's';
+    // tramos de urdimbre por encima = efecto de tejido
+    for (let c = 0; c < cols; c++) {
+      if ((r + c) % 2 === 0) {
+        const o = add('rect', { x: c*cw + 1.5, y: r*rh + 1, width: 5, height: rh - 2, rx: 1, fill: 'var(--hilo)', class: 'over' });
+        o.style.animationDelay = (parseFloat(delay) + .25 + c*.004).toFixed(2) + 's';
+      }
+    }
+  }
+})();
+</script>
+</body>
+</html>
